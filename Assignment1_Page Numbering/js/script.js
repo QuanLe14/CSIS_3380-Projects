@@ -16,7 +16,7 @@ async function getAPI(url){
 function show(data){
     const userData = document.getElementById("users");
     const pagination = document.getElementById("pagination");
-
+    
     const fixedUsers = 2;//Fixed User from HTML
     const usersPerPage = 8;
     const totalPages = Math.ceil((data.results.length - fixedUsers) / usersPerPage);
@@ -57,7 +57,7 @@ function show(data){
             button.appendChild(link);
             button.addEventListener("click", () => {
                 currentPage = i;
-                renderuserData(currentPage);
+                loadUserData(currentPage);
             });
             pagination.appendChild(button);
         }
